@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import Navigation from './Navigation';
 import Footer from './Footer';
+import "../style.sass";
 
 const links = [
   { name: 'Home', link: '/' },
