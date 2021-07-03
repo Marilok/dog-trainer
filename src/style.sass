@@ -11,16 +11,19 @@ html,body, #___gatsby, #gatsby-focus-wrapper
     margin: 0
     padding: 0
     // overflow-x: hidden
-
+*
 body
     font-size: 15px
 
+//TODO OUTLINE COLOR
 .hero
     &__img
         width: 200px
         height: auto
 
 .nav
+    position: sticky
+    top: 0
     display: flex
     justify-content: space-around
     align-items: center
@@ -30,38 +33,59 @@ body
 
     font-family: $font1
 
-    
+    &__links
+        position: absolute
+        right: 0
+        top: 0
+        width: 70%
+        max-width: 400px
+        height: 100vh
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+
+        background-color: $primary
     &__link
-        margin: 0 20px
-        padding: 15px 10px
+        // display: block
         text-decoration: none
-        &:hover
-            transition: 0.1s ease-out
-            color: $primary
-    
-        display: inline-block
-        position: relative
-        &::after
-            content: ''
-            position: absolute
-            width: 100%
-            transform: scaleX(0)
-            height: 5px
-            bottom: 10px
-            left: 0
-            background-color: $primary
-            transform-origin: bottom right
-            transition: transform 0.25s ease-out
-        &:hover::after
-            transform: scaleX(1)
-            transform-origin: bottom left
-        
-    &__link, &__lang
+
+        box-sizing: border-box
+        padding: 30px 40px
+        width: 100%
+
+        font-size: 2rem
         font-weight: 900
         color: $black
-        font-size: 1.75rem
-    &__lang
-        width: 100px
+    // &__link
+    //     margin: 0 20px
+    //     &:hover
+    //         transition: 0.1s ease-out
+    //         color: $primary
+    
+    //     display: inline-block
+    //     position: relative
+    //     &::after
+    //         content: ''
+    //         position: absolute
+    //         width: 100%
+    //         transform: scaleX(0)
+    //         height: 5px
+    //         bottom: 10px
+    //         left: 0
+    //         background-color: $primary
+    //         transform-origin: bottom right
+    //         transition: transform 0.25s ease-out
+    //     &:hover::after
+    //         transform: scaleX(1)
+    //         transform-origin: bottom left
+        
+    // &__link, &__lang
+    //     font-weight: 900
+    //     color: $black
+    //     font-size: 1.75rem
+    // &__lang
+    //     width: 100px
 
     &__container 
         display: inline-block
