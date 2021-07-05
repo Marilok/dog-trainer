@@ -3,18 +3,7 @@ import Layout from "../components/Layout";
 import { useStaticQuery, graphql } from "gatsby"
 import "../styles/contact.sass"
 
-import { createMuiTheme } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
-const theme = createMuiTheme({
-  palette: {
-    primary: {
-      main: "#FFC107",
-    },
-    // secondary: {
-    //   main: purple[700],
-    // },
-  },
-});
 
 
 const Contact = () => {

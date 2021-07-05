@@ -14,40 +14,110 @@ html,body, #___gatsby, #gatsby-focus-wrapper
 *
 body
     font-size: 15px
+    font-family: $font1
+    overflow-x: hidden
 
 //TODO OUTLINE COLOR
 .hero
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+    align-items: center
+    text-align: center
+    @media ( min-width: 992px )
+        flex-direction: row
+        text-align: left
+    &__textDiv
+        max-width: 80%
+        @media ( min-width: 992px )
+            max-width: none
+    &__imgDiv
+        position: relative
+        order: -1
+        width: auto
+        height: 40vh
+        @media ( min-width: 992px )
+            order: 0
+            height: 60vh
+    &__blob, &__img
+        height: 100%
+        width: auto
+        // height: auto
+        // width: 100%
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%,-50%)
+    &__blob
+        z-index: -1
     &__img
-        width: 200px
-        height: auto
+       
+    h1
+        font-size: 2rem
+        font-weight: 900
+    &__a
+        text-decoration: none
+        text-align: center
+        color: $white
+        background-color: $primary
+        padding: 20px 30px
+        border-radius: 10px
+        font-size: 1.5rem
+        font-weight: 700
+        margin: 20px auto
+        display: block
+        max-width: 200px
+        @media ( min-width: 992px )
+            margin: 20px 0
+
+        &:hover
+            opacity: 0.8
+            transition: 0.2s
 
 .nav
     position: sticky
     top: 0
     display: flex
-    justify-content: space-around
+    justify-content: space-between
     align-items: center
+    z-index: 1
 
     height: 80px
-    padding: 15px 0
+    padding: 20px 40px
 
     font-family: $font1
+    background-color: $white
+
+    &__logo
+        height: 100%
 
     &__links
+        display: flex
         position: absolute
-        right: 0
+        left: 100%
         top: 0
-        width: 70%
+        width: 65%
         max-width: 400px
         height: 100vh
-        display: flex
         flex-direction: column
         align-items: center
         justify-content: center
 
         background-color: $primary
+        transition: 0.15s transform ease-in
+        &--displayed
+            transform: translateX(-100%)
+        @media ( min-width: 992px )
+            display: flex
+            width: auto
+            max-width: none
+            flex-direction: row
+            position: static
+            background: none
+            &--displayed
+                transform: none
+            
     &__link
-        // display: block
         text-decoration: none
 
         box-sizing: border-box
@@ -57,28 +127,33 @@ body
         font-size: 2rem
         font-weight: 900
         color: $black
-    // &__link
-    //     margin: 0 20px
-    //     &:hover
-    //         transition: 0.1s ease-out
-    //         color: $primary
-    
-    //     display: inline-block
-    //     position: relative
-    //     &::after
-    //         content: ''
-    //         position: absolute
-    //         width: 100%
-    //         transform: scaleX(0)
-    //         height: 5px
-    //         bottom: 10px
-    //         left: 0
-    //         background-color: $primary
-    //         transform-origin: bottom right
-    //         transition: transform 0.25s ease-out
-    //     &:hover::after
-    //         transform: scaleX(1)
-    //         transform-origin: bottom left
+        @media ( min-width: 992px )
+            display: inline-block
+            position: relative
+            margin: 0 20px
+            padding: 20px 20px
+
+            font-weight: 900
+            color: $black
+            font-size: 1.75rem
+            
+            &:hover
+                transition: 0.1s ease-out
+                color: $primary
+            &::after
+                content: ''
+                position: absolute
+                transform: scaleX(0)
+                height: 5px
+                bottom: 10px
+                left: 10%
+                width: 80%
+                background-color: $primary
+                transform-origin: bottom right
+                transition: transform 0.25s ease-out
+            &:hover::after
+                transform: scaleX(1)
+                transform-origin: bottom left
         
     // &__link, &__lang
     //     font-weight: 900
@@ -88,24 +163,39 @@ body
     //     width: 100px
 
     &__container 
+        z-index: 2
+        border: none
+        background: none
+        font-size: 1rem
+        font-weight: 700
         display: inline-block
         cursor: pointer
+        position: relative
+        @media ( min-width: 992px )
+            display: none
+        
 
         &__bar1, &__bar2, &__bar3
-            width: 35px
+            width: 100%
             height: 5px
-            background-color: #333
+            background-color: $black
             margin: 6px 0
-            transition: 0.4s
+            transition: 0.2s
 
-        &__bar1 .change 
+        &__bar1--change 
             -webkit-transform: rotate(-45deg) translate(-9px, 6px) 
             transform: rotate(-45deg) translate(-9px, 6px) 
-        &__bar2 .change
+        &__bar2--change 
             opacity: 0
-        &__bar3 .change
+        &__bar3--change 
             -webkit-transform: rotate(45deg) translate(-8px, -8px) 
             transform: rotate(45deg) translate(-8px, -8px) 
+
+
+.hero, footer
+    margin-top: 10px
+    @media ( min-width: 992px )
+        margin-top: 40px
 
 footer
     width: 100%

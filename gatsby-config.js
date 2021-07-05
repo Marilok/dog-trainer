@@ -7,7 +7,7 @@ module.exports = {
     options: {
       apiURL: `http://localhost:8020`,
       queryLimit: 1000, // Defaults to 100
-      singleTypes: [`contact`],
+      singleTypes: [`contact`, `home`],
     },
   },],
 };
