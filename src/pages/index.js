@@ -1,8 +1,8 @@
 import * as React from "react";
-// import {Fragment} from 'react';
 import Layout from "../components/Layout";
 import Hero from "../components/Hero";
 import { useStaticQuery, graphql } from "gatsby"
+import "../styles/hero.sass"
 
 // import "@fontsource/open-sans/400.css";
 // import "@fontsource/open-sans/700.css";

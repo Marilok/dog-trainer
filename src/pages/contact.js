@@ -4,6 +4,8 @@ import { useStaticQuery, graphql } from "gatsby"
 import "../styles/contact.sass"
 
 import TextField from '@material-ui/core/TextField';
+import TextareaAutosize from '@material-ui/core/TextareaAutosize';
+
 
 
 const Contact = () => {
@@ -29,10 +31,17 @@ const Contact = () => {
   return (
     <Layout>
       <main>
+        <div className="info">
+          <h1>{Title}</h1>
+          <address>{Address}</address>
+          <a className="info__link" href={`mailto:${email}`}>{email}</a>
+          <a className="info__link" href={`tel:${phone}`}>{phone}</a></div>
         <div className="form">
           <form>
-            <TextField required label="Name" variant="filled" color="primary" />
-            <label for="name">Name</label>
+            <TextField required label="Name" variant="outlined" placeholder="John Smith" color="primary" />
+            <TextField required label="Email" type="email" placeholder="john@gmail.com" variant="outlined" color="primary" />
+            <TextField required multiline label="Message" placeholder="Hey, I love your work and would like to collaborate!" variant="outlined" color="primary" />
+            {/* <label for="name">Name</label>
             <input type="text" name="name"></input>
 
             <label for="mail">Email</label>
@@ -41,14 +50,10 @@ const Contact = () => {
             <label for="msg">Message</label>
             <textarea name="msg"></textarea>
 
-            <input type="submit"></input>
+            <input type="submit"></input> */}
           </form>
         </div>
-        <div className="info">
-        <h1>{Title}</h1>
-        <address>{Address}</address>
-          <a className="info__link" href={`mailto:${email}`}>{email}</a>
-          <a className="info__link" href={`tel:${phone}`}>{phone}</a></div>
+        
       </main>
     </Layout>
   )

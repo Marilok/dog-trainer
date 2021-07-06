@@ -18,61 +18,6 @@ body
     overflow-x: hidden
 
 //TODO OUTLINE COLOR
-.hero
-    display: flex
-    flex-direction: column
-    justify-content: space-around
-    align-items: center
-    text-align: center
-    @media ( min-width: 992px )
-        flex-direction: row
-        text-align: left
-    &__textDiv
-        max-width: 80%
-        @media ( min-width: 992px )
-            max-width: none
-    &__imgDiv
-        position: relative
-        order: -1
-        width: auto
-        height: 40vh
-        @media ( min-width: 992px )
-            order: 0
-            height: 60vh
-    &__blob, &__img
-        height: 100%
-        width: auto
-        // height: auto
-        // width: 100%
-        position: absolute
-        top: 50%
-        left: 50%
-        transform: translate(-50%,-50%)
-    &__blob
-        z-index: -1
-    &__img
-       
-    h1
-        font-size: 2rem
-        font-weight: 900
-    &__a
-        text-decoration: none
-        text-align: center
-        color: $white
-        background-color: $primary
-        padding: 20px 30px
-        border-radius: 10px
-        font-size: 1.5rem
-        font-weight: 700
-        margin: 20px auto
-        display: block
-        max-width: 200px
-        @media ( min-width: 992px )
-            margin: 20px 0
-
-        &:hover
-            opacity: 0.8
-            transition: 0.2s
 
 .nav
     position: sticky
