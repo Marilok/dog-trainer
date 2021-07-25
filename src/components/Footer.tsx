@@ -1,8 +1,9 @@
 import React from 'react'
+import "../styles/footer.sass"
 
 export default function Footer() {
     return (
-        <footer>
+        <footer className="footer">
             <p>John Smith &#169;</p>
         </footer>
     )

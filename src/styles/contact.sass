@@ -1,28 +1,115 @@
 @use 'foundation'
 main
-    display: flex
-    flex-direction: column
-    align-items: center
-    justify-content: center
+    display: grid
+    grid-template-columns: 1fr
+    grid-template-rows: auto 1fr auto
     @media ( min-width: 992px )
-        align-items: flex-start
-        justify-content: space-around
-        flex-direction: row
+        grid-template-columns: 1fr 1fr
+        grid-template-rows: 1fr auto
+        margin-top: 50px
+    // display: flex
+    // flex-direction: column
+    // align-items: center
+    // justify-content: center
+    // @media ( min-width: 992px )
+    //     align-items: flex-start
+    //     justify-content: space-around
+    //     flex-direction: row
 
     
 .form, .info
     width: 80%
-    max-width: 800px
+    max-width: 500px
 .form
-    padding: 40px 20px
+    justify-self: center
+    padding: 32px 20px
+    height: 400px
     border-radius: 10px
     background-color: foundation.$primary
+    margin: 20px 0
+    &__body
+        display: flex
+        flex-direction: column
+    h1
+        color: foundation.$white
+        text-align: center
+        padding-bottom: 16px
+    label
+        color: foundation.$black
+        font-weight: 800
+        margin-top: 12px
+    input, textarea
+        border: none
+        color: foundation.$black
+        font-weight: 800
+        padding: 8px 12px
+        border-radius: 2px
+        &::placeholder
+            color: lightgray
+            font-weight: 400
+    textarea
+        resize: vertical
+        height: 80px
+    button
+        padding: 8px 12px
+        margin-top: 12px
+        border: none
+        border-radius: 2px
+        background: foundation.$white
+        color: foundation.$black
+        font-weight: 800
+        text-transform: uppercase
+        transition: all 0.2s
+        cursor: pointer
+        display: flex
+        align-items: center
+        justify-content: center
+        svg
+            margin-left: 4px
+            height: 1rem
+        &:hover
+            opacity: 0.9
+            
+    @media ( min-width: 992px )
+        margin: 0
+        grid-column: 2 / span 1
+        grid-row: 1 / span 1
 
-address
-    font-style: normal
+
+
 .info
+    justify-self: center
+    @media ( min-width: 992px )
+        grid-column: 1 / span 1
+        grid-row: 1 / span 1
     &__link
         display: block
+    address
+        font-style: normal
+    &__card
+        margin-top: 20px
+        a
+            display: flex
+            align-items: center
+            text-decoration: none
+            color: foundation.$black
+            &, svg
+                transition: all 0.2s
+                margin-right: 12px
+            &:hover
+                color: foundation.$primary
+                text-decoration: underline
+                svg
+                    fill: foundation.$primary
+
 iframe
+    @media ( min-width: 992px )
+        grid-column: 1 / span 2
+        grid-row: 2 / span 1
+        margin-top: 40px
     border:0
+    width: 100%
+    height: 300px
+.footer
+    margin-top: 0
               

@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import logo from "../images/logo.png";
 import logoSmall from "../images/favicon.png";
 import { Link } from "gatsby";
+import "../styles/nav.sass"
 
 const Navigation = (props) => {
   const [isActive, setActive] = useState("false");

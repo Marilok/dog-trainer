@@ -1,13 +1,10 @@
 import React, { Fragment } from 'react';
 import Navigation from './Navigation';
 import Footer from './Footer';
-import "../style.sass";
+import "../styles/foundation.sass";
+import { useStaticQuery, graphql } from "gatsby";
 
-const links = [
-  { name: 'Home', link: '/' },
-  { name: 'About', link: '/about' },
-  { name: 'Contact', link: '/contact' },
-]
+
 
 const langs = [
   { name: 'ENG', flag: '', symbol: 'EN' },
@@ -15,8 +12,23 @@ const langs = [
 ]
 
 export default function Layout({children}) {
-  return (<Fragment><Navigation links={links} langs={langs} />
+  const data = useStaticQuery(graphql`
+    {
+      site {
+        siteMetadata {
+          menuLinks {
+            name
+            link
+          }
+        }
+      }
+    }
+  `)
+
+  const { site: { siteMetadata: { menuLinks } } } = data;
+  
+  return (<Fragment><Navigation links={menuLinks} langs={langs} />
   {children}
-  <Footer/>
+    <Footer/>
   </Fragment>)
 }
