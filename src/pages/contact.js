@@ -24,12 +24,12 @@ const Contact = () => {
   
   return (
     <Layout>
-      <main>
+      <main className="main--contact">
         <div className="info">
           <h1>{title}</h1>
           
           <div className="info__card">
-            <a className="info__link" href={mapUrl} target="_blank">
+            <a className="info__link" href={mapUrl} rel="noreferrer" target="_blank">
 
             <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 0 24 24" width="48px" fill="#000000"><path d="M0 0h24v24H0z" fill="none" /><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" /></svg>          <address>{Address}</address>
          </a>
@@ -67,7 +67,7 @@ const Contact = () => {
           </div>
           </form>
         
-        <iframe className="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2608.291272757261!2d16.603485115861858!3d49.17605928624018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47129507feac52ad%3A0x5b858fd3dbffa63!2sAZ%20Tower%2C%20Pra%C5%BE%C3%A1kova%201008%2F69%2C%20639%2000%20Brno-jih!5e0!3m2!1sen!2scz!4v1627131538159!5m2!1sen!2scz" width="600" height="450" style={{ border: 0 }} allowFullScreen="" loading="lazy"></iframe>
+        <iframe title="Map of where I work" className="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2608.291272757261!2d16.603485115861858!3d49.17605928624018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47129507feac52ad%3A0x5b858fd3dbffa63!2sAZ%20Tower%2C%20Pra%C5%BE%C3%A1kova%201008%2F69%2C%20639%2000%20Brno-jih!5e0!3m2!1sen!2scz!4v1627131538159!5m2!1sen!2scz" width="600" height="450" style={{ border: 0 }} allowFullScreen="" loading="lazy"></iframe>
       </main>
     </Layout>
   )
