@@ -10,7 +10,7 @@ module.exports = {
   plugins: ["gatsby-plugin-sass", "gatsby-plugin-gatsby-cloud", "gatsby-plugin-sharp", "gatsby-plugin-image", "gatsby-transformer-sharp",{
     resolve: `gatsby-source-strapi`,
     options: {
-      apiURL: `http://localhost:8020`,
+      apiURL: `https://marilokms-dog-trainer.herokuapp.com`,
       queryLimit: 1000, // Defaults to 100
       singleTypes: [`contact`, `home`, `about`],
       
